@@ -52,36 +52,34 @@ class Nodo {
     
     // Función para la búsqueda
     buscar(valor) {
-    // Se inicia la búsqueda en la raíz
-    let nodoActual = this.raiz;
+    //Se inicializa con un array de valores coincientes
+        const coincidencias = [];
+    //Llama a la función para verificar la busqueda
+        this.buscarRecursivo(this.raiz, valor, considencias);
+
+        //Retornamos el valor de coninsidencias
+    return coninsidencias;
+        
+    }
+        //Se compara el valor del nodo actual con el valor buscado
+        buscarRecursivo(nodo, valor, coinsidencias){
+            if (nodo === valor){
+                coinsidencias.push(nodo.valor);
+        }
+
+        //Realiza la busqueda del sub-árbol derecho
+            this.buscarRecursivo(nodo.izquierda, valor, concidencias);
+        }
+    }
+
+        //Ejemplo de uso
+    const bynaryTree = new BinaryTree();
+    binaryTree. insertar (3);
+    binaryTree. insertar (3);
+    binaryTree. insertar (3);
+    binaryTree. insertar (9);
+
+console.log ( binaryTree.buscar(3));
+console.log ( binaryTree.buscar(9));
     
-    // Recorre el árbol hasta que se encuentre una coincidencia
-    while (nodoActual !== null) {
-    // Si encuentras el valor, retorna
-    if (valor === nodoActual.valor) {
-    return true;
-    }
-    // Si el valor es mayor ve al sub-árbol izquierdo
-    else if (valor < nodoActual.valor) {
-    nodoActual = nodoActual.izquierda;
-    }
-    // Si el valor es mayor ve al sub-árbol derecho
-    else {
-    nodoActual = nodoActual.derecha;
-    }
-    }
-    // Si no se encuentra el valor retorna un falso
-    return false;
-    }
-    }
-    
-    // Ejemplo de uso
-    const binaryTree = new BinaryTree();
-    binaryTree.insertar(5);
-    binaryTree.insertar(2);
-    binaryTree.insertar(3);
-    binaryTree.insertar(8);
-    
-    //Método buscar y notificar si encuentra primera coincidencia
-    console.log(tree.buscar(4)); // Output: true
-    console.log(tree.buscar(6)); // Output: false
+
